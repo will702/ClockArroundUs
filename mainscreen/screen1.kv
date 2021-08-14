@@ -1,0 +1,135 @@
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+
+#:import Window kivy.core.window.Window
+
+
+
+
+#:import utils kivy.utils.get_color_from_hex
+
+<BackgroundLayer@BoxLayout>:
+    orientation:'vertical'
+    BoxLayout:
+        orientation:'vertical'
+        canvas.before:
+            Color:
+                rgba:utils("#289fbd")
+            RoundedRectangle:
+                pos:self.pos
+                size:self.size
+                radius:[0,0,40,40]
+    BoxLayout:
+        orientation:'horizontal'
+
+<Screen1>:
+    BackgroundLayer
+
+
+
+
+
+
+    MDCard:
+        orientation:"vertical"
+        size_hint:0.8,0.5
+        border_radius: 20
+        radius: [15]
+        pos_hint:{"center_x":0.5,'center_y':0.7}
+        MDLabel:
+            id:real_time
+            size_hint_y:0.4
+            text:'[b]00:00:00[/b]'
+            halign:"center"
+            font_name: 'Roboto'
+            font_size: 60
+            markup: True
+
+            markup:True
+        MDCard:
+            border_radius: 20
+            radius: [15]
+            MDCard:
+                border_radius: 20
+                radius: [15]
+                elevation:12
+
+                MDLabel:
+                    id:budi
+                    size_hint_y:0.8
+                    pos_hint:{"center_y":0.9}
+                    halign:'center'
+                    font_size:50
+
+
+                    text:'00:00.[size=60]00[/size]'
+
+                    font_name: 'Roboto'
+
+                    markup:True
+
+
+
+
+
+
+    TooltipMDIconButton:
+        tooltip_text:"Play"
+        icon:"play"
+        id:play_button
+        user_font_size: "40sp"
+
+
+        pos_hint:{"center_x":0.4,"center_y":0.6}
+        on_release:app.start_stop()
+
+    TooltipMDIconButton:
+        tooltip_text:"Reset Lap"
+
+        icon:"restart"
+        user_font_size: "40sp"
+
+        pos_hint:{"center_x":0.6,"center_y":0.6}
+        on_release:app.reset()
+    MDBoxLayout:
+        orientation:'vertical'
+        id:map_layout
+        size_hint:1,0.45
+        pos_hint:{"center_y":0.2,'center_x':0.5}
+        FarmersMapView:
+            id:map_view
+    MDToolbar:
+        title:"Clock Arround Us"
+        right_action_items:[['magnify',lambda x:app.search_menu.open()]]
+        md_bg_color:app.theme_cls.primary_color
+
+
+<FarmersMapView>:
+
+    lat: 33.75
+    lon: -84.4
+    zoom: 10
+    on_zoom:
+        self.zoom = 10 if self.zoom < 10 else self.zoom
+    on_lat:
+        self.start_getting_markets_in_fov()
+    on_lon:
+        self.start_getting_markets_in_fov()
+
+
+
+<Content>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+
+    MDTextField:
+        id:address
+        hint_text: "Address"
+        icon_right:"highway"
+
+        pos_hint:{"center_y":0.5}
+    Widget:
+        size_hint_y:None
+
+        height:100
