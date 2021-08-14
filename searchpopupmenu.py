@@ -4,7 +4,7 @@ from urllib import parse
 from kivymd.uix.button import MDFlatButton,MDRaisedButton
 from kivy.network.urlrequest import UrlRequest
 from kivy.app import App
-from timezonefinderL import TimezoneFinder
+from timezonefinder import TimezoneFinder
 from certifi import where
 
 
