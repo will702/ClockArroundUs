@@ -1,5 +1,5 @@
 https://github.com/kivymd/KivyMD/archive/master.zip
 pytz
 oscpy
-timezonefinderl
+timezonefinder
 mapview
