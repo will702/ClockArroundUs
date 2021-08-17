@@ -18,7 +18,7 @@ if platform == 'macosx':
     Window.size = (450, 750)
 
 SERVICE_NAME = u'{packagename}.Service{servicename}'.format(
-    packagename=u'org.kivy.oscservice',
+    packagename=u'tyt.detecttime.locator',
     servicename=u'Pong'
 )
 

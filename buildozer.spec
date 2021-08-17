@@ -83,9 +83,10 @@ fullscreen = 0
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
 android.presplash_color = black
-android.presplash_lottie = "icon_locator.json"
+
 # (list) Permissions
 android.accept_sdk_license = True
+
 android.permissions = INTERNET, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION
 
 # (int) Target Android API, should be as high as possible.
