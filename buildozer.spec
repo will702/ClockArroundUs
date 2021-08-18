@@ -130,7 +130,7 @@ icon.filename = %(source.dir)s/map.png
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-# android.accept_sdk_license = False
+android.accept_sdk_license = True
 p4a.branch = develop
 
 
