@@ -86,11 +86,16 @@ android.presplash_color = black
 
 # (list) Permissions
 android.accept_sdk_license = True
+android.presplash_lottie = "icon_locator.json"
 
 android.permissions = INTERNET, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
+presplash.filename = %(source.dir)s/map.png
+
+# (str) Icon of the application
+icon.filename = %(source.dir)s/map.png
 
 # (int) Minimum API your APK will support.
 #android.minapi = 21

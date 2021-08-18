@@ -99,7 +99,9 @@
             id:map_view
     MDToolbar:
         title:"Clock Arround Us"
-        right_action_items:[['magnify',lambda x:app.search_menu.open()]]
+        right_action_items:[['magnify',lambda x:app.search_menu.open(),"Search"]]
+
+        left_action_items:[['location-enter',lambda x:app.centering_map(),"Find"]]
         md_bg_color:app.theme_cls.primary_color
 
 
